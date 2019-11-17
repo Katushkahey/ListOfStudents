@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="list_of_students">Список студентов</string>
+    <string name="add_student">Добавить</string>
+    <string name="sex">Пол:</string>
+    <string name="male">Мужской</string>
+    <string name="female">Женский</string>
+    <string name="name">Имя</string>
+    <string name="surname">Фамилия</string>
+    <string name="cancel">Отменить</string>
+    <string name="add">Добавить</string>
+    <string name="save">Сохранить</string>
+    <string name="delete">Удалить</string>
+</resources>
