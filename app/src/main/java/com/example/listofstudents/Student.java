@@ -1,8 +1,6 @@
 package com.example.listofstudents;
 
 
-import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.widget.ImageView;
@@ -15,9 +13,9 @@ public class Student implements Parcelable {
     int poster;
     ImageView photo;
 
-    public Student(String name, String surname, int poster, String sex ) {
+    public Student(String name, String surname, int poster, String sex) {
         this.name = name;
-        this. surname = surname;
+        this.surname = surname;
         this.sex = sex;
         this.poster = poster;
     }
@@ -41,7 +39,7 @@ public class Student implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeStringArray(new String[] { name, surname, sex});
+        dest.writeStringArray(new String[]{name, surname, sex});
     }
 
     public static final Parcelable.Creator<Student> CREATOR = new Parcelable.Creator<Student>() {

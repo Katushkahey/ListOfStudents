@@ -29,7 +29,6 @@ public class CreateStudentActivity extends Activity {
         final ImageView poster = findViewById(R.id.activity_create_student__image);
         final RadioButton male = findViewById(R.id.activity_create_student__male);
         final RadioButton female = findViewById(R.id.activity_create_student__female);
-//        selectSex(male, female);
 
         male.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,11 +53,11 @@ public class CreateStudentActivity extends Activity {
             public void onClick(View v) {
                 if (!isSexSelected(male, female)) {
                     Toast.makeText(CreateStudentActivity.this, "Выбеите пол", Toast.LENGTH_LONG).show();
-                }else if(name.getText().length() == 0){
+                } else if (name.getText().length() == 0) {
                     Toast.makeText(CreateStudentActivity.this, "Введите имя", Toast.LENGTH_LONG).show();
-                }else if (surname.getText().length() == 0){
-                    Toast.makeText(CreateStudentActivity.this,  "Введите фамилию", Toast.LENGTH_LONG).show();
-                }else{
+                } else if (surname.getText().length() == 0) {
+                    Toast.makeText(CreateStudentActivity.this, "Введите фамилию", Toast.LENGTH_LONG).show();
+                } else {
                     Intent intent = new Intent();
                     intent.putExtra("name", name.getText().toString());
                     intent.putExtra("surname", surname.getText().toString());
@@ -78,7 +77,8 @@ public class CreateStudentActivity extends Activity {
             }
         });
     }
-    private boolean isSexSelected(RadioButton a, RadioButton b){
+
+    private boolean isSexSelected(RadioButton a, RadioButton b) {
         return (a.isChecked() || b.isChecked());
     }
 

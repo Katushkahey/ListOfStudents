@@ -42,11 +42,12 @@ public class EditStudentActivity extends Activity {
         saveView = findViewById(R.id.activity_edit_student__save);
         cancelView = findViewById(R.id.activity_edit_student__cancel);
 
-        name = getIntent().getStringExtra("name");
-        surname = getIntent().getStringExtra("surname");
-        sex = getIntent().getStringExtra("sex");
-        poster = getIntent().getIntExtra("poster", 0);
-        index = getIntent().getIntExtra("index",-1);
+        Student student = getIntent().getParcelableExtra("student");
+        name = student.name;
+        surname = student.surname;
+        sex = student.sex;
+        poster = getIntent().getIntExtra("poster",-1);
+        index = getIntent().getIntExtra("index", -1);
 
         onSetChecked(maleView, femaleView, sex);
         nameView.setText(name);
@@ -103,16 +104,17 @@ public class EditStudentActivity extends Activity {
                 intent.putExtra("index", index);
                 intent.putExtra("button", "save");
                 setResult(RESULT_OK, intent);
-                finish(); 
+                finish();
             }
         });
 
 
     }
-    private void onSetChecked(RadioButton a, RadioButton b, String str){
-        if(str.equals("male")){
+
+    private void onSetChecked(RadioButton a, RadioButton b, String str) {
+        if (str.equals("male")) {
             a.setChecked(true);
-        }else{
+        } else {
             b.setChecked(true);
         }
     }

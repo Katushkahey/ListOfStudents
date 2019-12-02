@@ -11,11 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentHolder>  {
+public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentHolder> {
     private List<Student> students;
     private final Listener onStudentClickListener;
 
-    public StudentAdapter(List<Student> students, Listener onStudentClickListener){
+    public StudentAdapter(List<Student> students, Listener onStudentClickListener) {
         this.students = students;
         this.onStudentClickListener = onStudentClickListener;
     }
@@ -27,7 +27,7 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentH
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onStudentClickListener.onStudentClick((Student)v.getTag());
+                onStudentClickListener.onStudentClick((Student) v.getTag());
             }
         });
         return new StudentHolder(view);
@@ -35,9 +35,9 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentH
 
     @Override
     public void onBindViewHolder(@NonNull StudentHolder holder, int i) {
-        if(students.size() == 0){
+        if (students.size() == 0) {
             return;
-        }else {
+        } else {
             Student student = students.get(i);
             holder.bind(student);
             holder.itemView.setTag(student);
@@ -56,12 +56,12 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.StudentH
 
         public StudentHolder(@NonNull View itemView) {
             super(itemView);
-            imageView =itemView.findViewById(R.id.student_item__image);
+            imageView = itemView.findViewById(R.id.student_item__image);
             name = itemView.findViewById(R.id.student_item__name);
             surname = itemView.findViewById(R.id.student_item__surname);
         }
 
-        public void bind(Student student){
+        public void bind(Student student) {
             name.setText(student.name);
             surname.setText(student.surname);
             imageView.setImageResource(student.poster);
